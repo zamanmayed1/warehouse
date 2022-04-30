@@ -12,7 +12,7 @@ const BestSupplier = () => {
       <div className="mt-12 mb-6 flex justify-center">
         <img
           src="https://i.ibb.co/C0m3GSz/Rectangle-17.png"
-          className="rounded-full w-24 h-24 shadow-lg"
+          className="shadow-lg"
           alt="smaple image"
         />
       </div>
@@ -23,7 +23,7 @@ const BestSupplier = () => {
       <div className="mt-12 mb-6 flex justify-center">
         <img
           src="https://i.ibb.co/H2qQh2J/Rectangle-18.png"
-          className="rounded-full w-24 h-24 shadow-lg"
+          className=" shadow-lg"
           alt="smaple image"
         />
       </div>
@@ -34,7 +34,7 @@ const BestSupplier = () => {
       <div className="mt-12 mb-6 flex justify-center">
         <img
           src="https://i.ibb.co/gr71Nkc/Rectangle-15.png"
-          className="rounded-full w-24 h-24 shadow-lg"
+          className=" shadow-lg"
           alt="smaple image"
         />
       </div>
