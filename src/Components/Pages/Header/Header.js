@@ -16,7 +16,7 @@ const Header = () => {
 
                 <div className="flex items-center place-content-center" >
                 <CustomLink to={'/'}>Home</CustomLink>
-                <CustomLink to={'/inventory'}>Inventory</CustomLink>
+                <CustomLink to={'/blog'}>Blog</CustomLink>
                    {
                        !user ? 
                        <> 
@@ -24,7 +24,13 @@ const Header = () => {
                        <CustomLink to={'/login'}>Login</CustomLink>
                        <CustomLink to={'/signup'}>Signup</CustomLink>
                        </> 
-                       : <button onClick={()=>signOut(auth)} >Log Out</button>
+                       :
+                       <>
+                       <CustomLink to={'/manageinventory'}>Manage Items</CustomLink>
+                       <CustomLink to={`/myitem`}>My Item</CustomLink>
+                       <CustomLink to={'/additem'}>Add Item</CustomLink>
+                        <button onClick={()=>signOut(auth)} >Log Out</button>
+                       </>
                    }
                 </div>
 

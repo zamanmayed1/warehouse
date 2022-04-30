@@ -3,14 +3,34 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase/Firebase.init';
 
 const Additem = () => {
-    const [user] = useAuthState(auth)
-    return (
-        <div>
-              <h2 className='text-xl md:text-2xl my-5 font-bold text-indigo-400'> Add Item </h2>
+  const [user] = useAuthState(auth)
 
-            <form className='md:w-2/4 mx-auto p-2 mb-10'>
-            <div className="form-group mb-6">
-      <input type="text" name='name' className="form-control block
+  const additem = (e) => {
+    e.preventDefault()
+
+    const item = {
+      email: user?.email,
+      name: e.target.name.value,
+      price: e.target.price.value,
+      price: e.target.price.value,
+      description: e.target.description.value,
+      quantity: e.target.quantity.value,
+      suppliername: e.target.suppliername.value,
+      img: e.target.img.value
+
+    }
+
+
+
+    console.log(item);
+  }
+  return (
+    <div>
+      <h2 className='text-xl md:text-2xl my-5 font-bold text-indigo-400'> Add Item </h2>
+
+      <form onSubmit={additem} className='md:w-2/4 mx-auto p-2 mb-10'>
+        <div className="form-group mb-6">
+          <input type="text" name="name" className="form-control block
         w-full
         px-3
         py-1.5
@@ -24,11 +44,11 @@ const Additem = () => {
         ease-in-out
         m-0
         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput125"
-        placeholder="Item Name" />
-    </div>
-    <div className="grid grid-cols-2 gap-4">
-      <div className="form-group mb-6">
-        <input type="text" name='price' className="form-control
+            placeholder="Item Name"required />
+        </div>
+        <div className="grid grid-cols-2 gap-4">
+          <div className="form-group mb-6">
+            <input type="text" name='price' className="form-control
           block
           w-full
           px-3
@@ -43,10 +63,10 @@ const Additem = () => {
           ease-in-out
           m-0
           focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput123"
-          aria-describedby="emailHelp123" placeholder="Price" />
-      </div>
-      <div className="form-group mb-6">
-        <input type="text" name='quantity' className="form-control
+              aria-describedby="emailHelp123" placeholder="Price"required />
+          </div>
+          <div className="form-group mb-6">
+            <input type="text" name='quantity' className="form-control
           block
           w-full
           px-3
@@ -61,12 +81,12 @@ const Additem = () => {
           ease-in-out
           m-0
           focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput124"
-          aria-describedby="emailHelp124" placeholder="Quantity"/>
-      </div>
-    </div>
+              aria-describedby="emailHelp124" placeholder="Quantity"required />
+          </div>
+        </div>
 
-      <div className="form-group mb-6">
-        <input type="text" name='suppliername' className="form-control
+        <div className="form-group mb-6">
+          <input type="text" name='suppliername' className="form-control
           block
           w-full
           px-3
@@ -81,13 +101,13 @@ const Additem = () => {
           ease-in-out
           m-0
           focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput123"
-          aria-describedby="emailHelp123" placeholder="Supplier Name" />
-      </div>
- 
-  
+            aria-describedby="emailHelp123" placeholder="Supplier Name"required />
+        </div>
 
-    <div className="form-group mb-6">
-      <input type="email" name='email' className="form-control block
+
+
+        <div className="form-group mb-6">
+          <input type="email" name='email' className="form-control block
         w-full
         px-3
         py-1.5
@@ -101,10 +121,10 @@ const Additem = () => {
         ease-in-out
         m-0
         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput125"
-        value={user?.email} />
-    </div>
-    <div className="form-group mb-6">
-      <input type="text" name='img'  className="form-control block
+            value={user?.email} />
+        </div>
+        <div className="form-group mb-6">
+          <input type="text" name='img' className="form-control block
         w-full
         px-3
         py-1.5
@@ -118,12 +138,12 @@ const Additem = () => {
         ease-in-out
         m-0
         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput126"
-        placeholder="Image Url"/>
-    </div>
-    <div className="form-group mb-6">
-        <textarea name="description" className='w-full h-24' placeholder='Description' ></textarea>
-    </div>
-    <button type="submit" className="
+            placeholder="Image Url" required />
+        </div>
+        <div className="form-group mb-6">
+          <textarea name="description" className='w-full h-24' placeholder='Description' required ></textarea>
+        </div>
+        <button type="submit" className="
       w-full
       px-6
       py-2.5
@@ -141,9 +161,9 @@ const Additem = () => {
       transition
       duration-150
       ease-in-out">Add Now</button>
-  </form>
-        </div>
-    );
+      </form>
+    </div>
+  );
 };
 
 export default Additem;

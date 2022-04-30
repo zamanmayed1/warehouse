@@ -52,5 +52,14 @@
     "quantity": "60",
     "suppliername": "Md abul Hakim",
     "img": "https://www.shodagor.com/wp-content/uploads/2021/05/1-7.jpg"
+  }, 
+  {
+    "email":"zamanmayed02@gmail.com",
+    "name": "High-quality Ispahani Parbon",
+    "price": "1600",
+    "description": "It is one of the indigenous, traditional aromatic rice of Bangladesh. The grain is slightly fattier than Kalijira, Tulshimala, and Chinigura rice. ",
+    "quantity": "35",
+    "suppliername": "Md abul Hakim",
+    "img": "https://www.shodagor.com/wp-content/uploads/2020/10/rice-1-2.jpg"
   }
 ]
