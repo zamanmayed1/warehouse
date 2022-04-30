@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import 'tw-elements';
-import 'flowbite';
 import App from './App';
 import { BrowserRouter } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';

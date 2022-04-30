@@ -38,18 +38,18 @@
   {
     "id": 5,
     "name": "TEER Miniket Rice",
-    "price": "100",
+    "price": "960",
     "description": "Miniket rice is a variety of aromatic rice mostly popular and cultivated in Bangladesh. This rice variety is totally white in color, thin, and long in size with a little bit of round lower edge and pointy head.",
-    "quantity": "3",
+    "quantity": "120",
     "suppliername": "Md abul Hakim",
     "img": "https://www.shodagor.com/wp-content/uploads/2020/12/teer-miniket-rice-10kg.jpg"
   },
   {
     "id": 6,
     "name": "Aromatic (Chinigura) Rice  ",
-    "price": "245",
+    "price": "2405",
     "description": "Chinigura Rice is hygienically processed and polished by automated machines from specifically selected premium quality white rice using modern technology that provides you with the best quality rice. Its natural aroma adds a unique taste and flavor to biryani, pulao, khichuri, desserts, etc.",
-    "quantity": "5",
+    "quantity": "60",
     "suppliername": "Md abul Hakim",
     "img": "https://www.shodagor.com/wp-content/uploads/2021/05/1-7.jpg"
   }
