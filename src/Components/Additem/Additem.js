@@ -19,10 +19,17 @@ const Additem = () => {
       img: e.target.img.value
 
     }
-
-
-
     console.log(item);
+
+    fetch('http://localhost:5000/additem', {
+      method: 'POST',
+      body: JSON.stringify(item),
+      headers: {
+        'Content-type': 'application/json',
+      },
+    })
+      .then((response) => response.json())
+      .then((json) => console.log(json));
   }
   return (
     <div>
@@ -44,7 +51,7 @@ const Additem = () => {
         ease-in-out
         m-0
         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput125"
-            placeholder="Item Name"required />
+            placeholder="Item Name" required />
         </div>
         <div className="grid grid-cols-2 gap-4">
           <div className="form-group mb-6">
@@ -63,7 +70,7 @@ const Additem = () => {
           ease-in-out
           m-0
           focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput123"
-              aria-describedby="emailHelp123" placeholder="Price"required />
+              aria-describedby="emailHelp123" placeholder="Price" required />
           </div>
           <div className="form-group mb-6">
             <input type="text" name='quantity' className="form-control
@@ -81,7 +88,7 @@ const Additem = () => {
           ease-in-out
           m-0
           focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput124"
-              aria-describedby="emailHelp124" placeholder="Quantity"required />
+              aria-describedby="emailHelp124" placeholder="Quantity" required />
           </div>
         </div>
 
@@ -101,7 +108,7 @@ const Additem = () => {
           ease-in-out
           m-0
           focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput123"
-            aria-describedby="emailHelp123" placeholder="Supplier Name"required />
+            aria-describedby="emailHelp123" placeholder="Supplier Name" required />
         </div>
 
 
