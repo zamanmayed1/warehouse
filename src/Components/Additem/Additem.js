@@ -1,13 +1,14 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase/Firebase.init';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 const Additem = () => {
   const [user] = useAuthState(auth)
 
   const additem = (e) => {
     e.preventDefault()
-
     const item = {
       email: user?.email,
       name: e.target.name.value,
@@ -29,7 +30,12 @@ const Additem = () => {
       },
     })
       .then((response) => response.json())
-      .then((json) => console.log(json));
+      .then((json) => {
+        if (json.acknowledged) {
+          toast("Item Added Successful!")
+          e.target.reset()
+        }
+      });
   }
   return (
     <div>
@@ -168,6 +174,7 @@ const Additem = () => {
       transition
       duration-150
       ease-in-out">Add Now</button>
+       <ToastContainer />
       </form>
     </div>
   );

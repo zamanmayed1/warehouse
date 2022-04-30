@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../Firebase/Firebase.init';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 const MyItem = () => {
     const [inventory, setInventory] = useState([])
@@ -15,8 +17,19 @@ const MyItem = () => {
 
     }, [user])
     const deletitem = (id) => {
-        alert(id)
-    }
+        fetch(`http://localhost:5000/inventory/${id}`, {
+            method: 'DELETE',
+        })
+            .then((response) => response.json(id))
+            .then((json) => {
+               if (json.acknowledged) {
+                toast("Delete Successful!")
+                const remaining = inventory.filter(item => item._id !== id )
+                setInventory(remaining)
+                
+               }
+            });
+        }
     const additem = () => {
         navigate('/additem')
     }
@@ -92,7 +105,7 @@ const MyItem = () => {
 
                 }
             </div>
-
+            <ToastContainer />
         </div>
     );
 };
