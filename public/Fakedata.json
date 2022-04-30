@@ -1,15 +1,56 @@
 [
-    {
-      
-      "category": "Men's Sneaker",
-      "name": "ULTRABOOST 22 SHOES",
-      "seller": "Addidas",
-      "price": 420,
-      "stock": 20,
-      "ratings": 4,
-      "ratingsCount": 3725,
-      "img": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fbaf991a78bc4896a3e9ad7800abcec6_9366/Ultraboost_22_Shoes_Black_GZ0127_01_standard.jpg",
-      "shipping": 1,
-      "quantity": 0
-    }
+  {
+    "id": 1,
+    "name": "Shodagor Katari-Nazir Rice",
+    "price": "1600",
+    "description": "Shodagor Katari-Nazir rice is white & extra long in size, has a beautiful aroma. Its properties have a high nutritious value. Because of its long grains, it is easy to digest.",
+    "quantity": "35",
+    "suppliername": "Md abul Hakim",
+    "img": "https://www.shodagor.com/wp-content/uploads/2021/12/WhatsApp-Image-2021-12-04-at-11.19.18-AM.jpeg"
+  },
+  {
+    "id": 2,
+    "name": "Chashi Aromatic Chinigura Rice",
+    "price": "2400",
+    "description": "Chashi Aromatic Chinigura Rice is hygienically processed and polished by automated machines from specifically selected premium quality white rice using modern technology that provides you with the best quality rice. Its natural aroma adds a unique taste and flavor to biryani, pulao, khichuri, desserts, etc.",
+    "quantity": "75",
+    "suppliername": "Md abul Hakim",
+    "img": "https://www.shodagor.com/wp-content/uploads/2021/01/Chinigura-Rice-2kg.jpg"
+  },
+  {
+    "id": 3,
+    "name": "TEER Nazirshail Rice",
+    "price": "150",
+    "description": "TEER Nazirshail Rice is a variety of aromatic rice mostly popular and cultivated in Bangladesh. This rice variety is totally white in color, thin, and long in size with a little bit of round lower edge and pointy head.",
+    "quantity": "1",
+    "suppliername": "Md abul Hakim",
+    "img": "https://www.shodagor.com/wp-content/uploads/2020/12/teer-Nazirshile-rice-5kg.jpg"
+  },
+  {
+    "id": 4,
+    "name": "TEER Chinigura Rice",
+    "price": "1800",
+    "description": "Groceries are not distant shopping items anymore! In these days of Online Revolution, we can get different types of groceries items like Rice, Edible Oils, Noodles and Pasta, Cookies, Pastry Items, Chocolates, Tasty Sweet and Sour Pickles, Sugars, etc Open or Canned/Packed products just after doing some smart clicks online.",
+    "quantity": "96",
+    "suppliername": "Md abul Hakim",
+    "img": "https://www.shodagor.com/wp-content/uploads/2020/12/teer-chinigura-rice-1kg.jpg"
+  },
+  {
+    "id": 5,
+    "name": "TEER Miniket Rice",
+    "price": "100",
+    "description": "Miniket rice is a variety of aromatic rice mostly popular and cultivated in Bangladesh. This rice variety is totally white in color, thin, and long in size with a little bit of round lower edge and pointy head.",
+    "quantity": "3",
+    "suppliername": "Md abul Hakim",
+    "img": "https://www.shodagor.com/wp-content/uploads/2020/12/teer-miniket-rice-10kg.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Aromatic (Chinigura) Rice  ",
+    "price": "245",
+    "description": "Chinigura Rice is hygienically processed and polished by automated machines from specifically selected premium quality white rice using modern technology that provides you with the best quality rice. Its natural aroma adds a unique taste and flavor to biryani, pulao, khichuri, desserts, etc.",
+    "quantity": "5",
+    "suppliername": "Md abul Hakim",
+    "img": "https://www.shodagor.com/wp-content/uploads/2021/05/1-7.jpg"
+  }
 ]

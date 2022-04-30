@@ -2,8 +2,8 @@ import React from 'react';
 
 const BecomeASupplier = () => {
     return (
-        <div className='mx-auto flex flex-col justify-center items-center'>
-            <h2 className='text-xl md:text-2xl my-5 font-bold text-indigo-400'>Become A Supplier</h2>
+        <div className='mx-auto flex flex-col pb-6 justify-center items-center bg-[#F3F4F6] py-2'>
+            <h2 className='text-xl md:text-2xl my-5  font-bold text-indigo-400'>Become A Supplier</h2>
 
             <div className="block p-6 rounded-lg shadow-lg bg-white max-w-md">
   <form>

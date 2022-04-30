@@ -8,6 +8,7 @@ import Login from './Components/Pages/Login/Login';
 import Signup from './Components/Pages/Signup/Signup';
 import RequireAuth from './Components/RequireAuth/RequireAuth';
 import Footer from './Components/Shared/Footer';
+import SingleInventory from './Components/SingleInventory/SingleInventory';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Routes>
       <Route path='/' element={<Home></Home>}></Route>
         <Route path='/inventory' element={<RequireAuth> <Inventory></Inventory></RequireAuth>}></Route>
+        <Route path='inventory/:id' element={<RequireAuth><SingleInventory></SingleInventory> </RequireAuth>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
         <Route path='*' element={<Errorpage></Errorpage>}></Route>

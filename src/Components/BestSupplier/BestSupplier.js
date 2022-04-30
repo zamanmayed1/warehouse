@@ -8,48 +8,37 @@ const BestSupplier = () => {
             <div id="carouselExampleCaptions" className="carousel slide relative carousel-dark" data-bs-ride="carousel">
   <div className="carousel-inner relative w-full overflow-hidden">
     <div className="carousel-item active relative float-left w-full text-center">
-      <p className="text-xl italic mx-auto text-gray-700 max-w-4xl">
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet
-        numquam iure provident voluptate esse quasi, voluptas nostrum quisquam!"
-      </p>
+     
       <div className="mt-12 mb-6 flex justify-center">
         <img
-          src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).webp"
+          src="https://i.ibb.co/C0m3GSz/Rectangle-17.png"
           className="rounded-full w-24 h-24 shadow-lg"
           alt="smaple image"
         />
       </div>
-      <p className="text-gray-500">- Anna Morian</p>
+      <p className="text-gray-600 font-bold md:text-2xl">Anna Morian</p>
     </div>
     <div className="carousel-item relative float-left w-full text-center">
-      <p className="text-xl italic mx-auto text-gray-700 max-w-4xl">
-        "Neque cupiditate assumenda in maiores repudiandae mollitia adipisci maiores
-        repudiandae mollitia consectetur adipisicing architecto elit sed adipiscing
-        elit."
-      </p>
+      
       <div className="mt-12 mb-6 flex justify-center">
         <img
-          src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(31).webp"
+          src="https://i.ibb.co/H2qQh2J/Rectangle-18.png"
           className="rounded-full w-24 h-24 shadow-lg"
           alt="smaple image"
         />
       </div>
-      <p className="text-gray-500">- Teresa May</p>
+      <p className="text-gray-600 font-bold md:text-2xl"> Teresa May</p>
     </div>
     <div className="carousel-item relative float-left w-full text-center">
-      <p className="text-xl italic mx-auto text-gray-700 max-w-4xl">
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-        dolore eu fugiat nulla pariatur est laborum neque cupiditate assumenda in
-        maiores."
-      </p>
+    
       <div className="mt-12 mb-6 flex justify-center">
         <img
-          src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp"
+          src="https://i.ibb.co/gr71Nkc/Rectangle-15.png"
           className="rounded-full w-24 h-24 shadow-lg"
           alt="smaple image"
         />
       </div>
-      <p className="text-gray-500">- Kate Allise</p>
+      <p className="text-gray-600 font-bold md:text-2xl">Kate Allise</p>
     </div>
   </div>
   <button
