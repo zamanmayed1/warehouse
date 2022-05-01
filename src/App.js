@@ -17,9 +17,9 @@ import SingleInventory from './Components/SingleInventory/SingleInventory';
 function App() {
   return (
     <div className="App">
-      <Header/>
+      <Header />
       <Routes>
-      <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/' element={<Home></Home>}></Route>
         <Route path='/inventory' element={<RequireAuth> <Inventory></Inventory></RequireAuth>}></Route>
         <Route path='/manageinventory' element={<RequireAuth><ManageInventory></ManageInventory></RequireAuth>}></Route>
         <Route path='/inventory/:id' element={<RequireAuth><SingleInventory></SingleInventory> </RequireAuth>}></Route>
@@ -30,7 +30,7 @@ function App() {
         <Route path='/blog' element={<Blog></Blog>}></Route>
         <Route path='*' element={<Errorpage></Errorpage>}></Route>
       </Routes>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

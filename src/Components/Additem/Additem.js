@@ -2,7 +2,7 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase/Firebase.init';
 import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Additem = () => {
   const [user] = useAuthState(auth)
@@ -20,7 +20,7 @@ const Additem = () => {
       img: e.target.img.value
 
     }
-  
+
 
     fetch('http://localhost:5000/additem', {
       method: 'POST',
@@ -174,7 +174,7 @@ const Additem = () => {
       transition
       duration-150
       ease-in-out">Add Now</button>
-       <ToastContainer />
+        <ToastContainer />
       </form>
     </div>
   );
