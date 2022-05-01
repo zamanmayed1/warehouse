@@ -20,7 +20,7 @@ const Additem = () => {
       img: e.target.img.value
 
     }
-    console.log(item);
+  
 
     fetch('http://localhost:5000/additem', {
       method: 'POST',

@@ -8,10 +8,7 @@ const Login = () => {
     const [user] = useAuthState(auth)
     let navigate = useNavigate();
     let location = useLocation();
-
     let from = location.state?.from?.pathname || "/";
-
-
     if (user) {
         navigate(from, { replace: true });
     }

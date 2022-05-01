@@ -8,9 +8,13 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 const Signup = () => {
     const [user] = useAuthState(auth)
-    let navigate = useNavigate();
+
+   let navigate = useNavigate();
     let location = useLocation();
     let from = location.state?.from?.pathname || "/";
+    if (user) {
+        navigate(from, { replace: true });
+    }
     const [
         createUserWithEmailAndPassword,
         loading,
