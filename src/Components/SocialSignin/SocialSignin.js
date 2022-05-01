@@ -6,8 +6,8 @@ const SocialSignin = () => {
     const [signInWithGoogle] = useSignInWithGoogle(auth);
     
     return (
-        <div>
-            <div onClick={()=>signInWithGoogle()} className="google p-2 border cursor-pointer w-3/4 md:w-2/4 mx-auto rounded-full flex justify-center items-center"> <img className='w-6 h-6 mx-2' src="https://i.ibb.co/G5XJbwq/google.png" alt="" /> Continue With Google</div>
+        <div >
+            <div onClick={()=>signInWithGoogle()} className="google p-2 border cursor-pointer w-full md:w-3/4 mx-auto rounded-full flex justify-center items-center"> <img className='w-6 h-6 mx-2' src="https://i.ibb.co/G5XJbwq/google.png" alt="" /> Continue With Google</div>
         </div>
     );
 };

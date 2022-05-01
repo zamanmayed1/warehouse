@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+
+  
 const ManageInventory = () => {
     const [inventory, setInventory] = useState([])
     const navigate = useNavigate()
@@ -11,18 +13,23 @@ const ManageInventory = () => {
             .then(data => setInventory(data))
     }, [])
     const deletitem = (id) => {
-        fetch(`http://localhost:5000/inventory/${id}`, {
-            method: 'DELETE',
-        })
-            .then((response) => response.json(id))
-            .then((json) => {
-               if (json.acknowledged) {
-                toast("Delete Successful!")
-                const remaining = inventory.filter(item => item._id !== id )
-                setInventory(remaining)
-                
-               }
-            });
+    
+            fetch(`http://localhost:5000/inventory/${id}`, {
+                method: 'DELETE',
+            })
+                .then((response) => response.json(id))
+                .then((json) => {
+                   if (json.acknowledged) {
+                    toast("Delete Successful!")
+                    const remaining = inventory.filter(item => item._id !== id )
+                    setInventory(remaining)
+                    
+                   }
+                });
+          
+           
+
+        
     }
     const additem = () => {
         navigate('/additem')

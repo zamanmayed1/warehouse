@@ -19,7 +19,7 @@ const Signup = () => {
         createUserWithEmailAndPassword,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth , {sendEmailVerification: true});
     const signup = (e) => {
         e.preventDefault()
         const email = e.target.email.value
@@ -42,7 +42,7 @@ const Signup = () => {
     }
     return (
         <div >
-            <div className='md:flex shadow-sm md:w-3/4 mx-auto rounded-lg mt-20 py-3 h-auto'>
+            <div className='md:flex shadow-sm md:w-3/4 mx-auto rounded-lg mt-20 mb-20 py-3 h-auto'>
                 <img className='hidden md:block md:w-2/4' src="https://i.ibb.co/4Jj4xPR/undraw-Access-account-re-8spm.png" alt="" />
                 <div className='md:w-2/4 p-3 h-full'>
                     <form onSubmit={signup} >

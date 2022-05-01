@@ -1,41 +1,73 @@
-import React from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { useLocation, useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../Firebase/Firebase.init';
 import SocialSignin from '../../SocialSignin/SocialSignin';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const [user] = useAuthState(auth)
-    let navigate = useNavigate();
-    let location = useLocation();
-    let from = location.state?.from?.pathname || "/";
-    if (user) {
-        navigate(from, { replace: true });
-    }
-    return (
-        <div >
-            <div className='md:flex shadow-sm md:w-3/4 mx-auto rounded-lg mt-20 h-auto py-3'>
-                <img className='hidden md:block md:w-2/4' src="https://i.ibb.co/1r5t1w4/undraw-logistics-x4dc.png" alt="" />
-                <div className='md:w-2/4 p-3 h-full'>
-                    <form >
-                        <h2 className='text-2xl text-indigo-300'>Log In</h2>
-                        <h2 className='mb-14'>Log in your Account</h2>
+     const navigate = useNavigate()
+    const [ signInWithEmailAndPassword , , loading,error,] = useSignInWithEmailAndPassword(auth);
 
-                        <input className='w-3/4 rounded-full mx-auto' type="email" placeholder='Your Email Address' required />
-                        <input className='w-3/4 rounded-full mx-auto' type="password" placeholder='Your Password' required />
-                        <input className='w-1/4 p-2 font-bold text-white bg-indigo-500 rounded-full mx-auto' type="submit" value="Log In" />
-                        <p className='text-right text-blue-600 underline cursor-pointer pr-14'>Forget Password</p>
-                    </form>
-                    <div className='flex items-center my-1 text-gray-600 justify-center'>
-                        <div className='border-t w-32 mx-2'></div>
-                        <p>or</p>
-                        <div className='border-t w-32  mx-2'></div>
-                    </div>
-                    <SocialSignin />
-                </div>
+     const [email, setEmail] = useState('')
+     const [password, setPassword] = useState('')
+
+     const location = useLocation()
+     const from = location.state?.from?.pathname || '/'
+      
+     if(user){
+      navigate(from , {replace: true})
+    }
+   useEffect(()=>{
+    if (error) {
+      toast('Incorrect Login Details')
+    }
+   },[error])
+    const handleEmailBlur = event=>{
+        setEmail(event.target.value)
+    } 
+    
+    const handlePasswordBlur = event=>{
+        setPassword(event.target.value)
+    }
+
+     const handleLogin = event=>{
+         event.preventDefault()
+         signInWithEmailAndPassword(email,password)
+     }
+     const [sendPasswordResetEmail] = useSendPasswordResetEmail( auth);
+     const resetpassword = async  ( ) => {
+        if (email) {
+            await sendPasswordResetEmail(email);
+        toast('Email Sent');
+        }
+        else{
+            toast('Input Email First');
+        }
+     }
+    
+    return (
+        <div className='w-full flex justify-center mb-20'>
+        <div className="colm-form mx-auto my-7">
+        <div className="form-container">
+            <form onSubmit={handleLogin}>
+            <input onBlur={handleEmailBlur} type="text" placeholder="Email address" required/>
+            <input onBlur={handlePasswordBlur} type="password" placeholder="Password" required/>
+            <p onClick={resetpassword} className='text-right text-blue-700 underline my-1'>Forgotten password?</p>
+            <button type='submit' className="btn-login bg-indigo-600
+            ">Login</button>
+          </form>
+            <div className='w-full p-2 my-1 mdk'>
+            <SocialSignin/>
             </div>
+            <ToastContainer />
         </div>
-    );
-};
+       
+    </div>
+    </div>
+    
+    )};
 
 export default Login;

@@ -29,7 +29,7 @@ const Header = () => {
                        <CustomLink to={'/manageinventory'}>Manage Items</CustomLink>
                        <CustomLink to={`/myitem`}>My Item</CustomLink>
                        <CustomLink to={'/additem'}>Add Item</CustomLink>
-                        <button onClick={()=>signOut(auth)} >Log Out</button>
+                        <button className='bg-red-600 text-white font-bold rounded-md px-2 p-1' onClick={()=>signOut(auth)} >Log Out</button>
                        </>
                    }
                 </div>
