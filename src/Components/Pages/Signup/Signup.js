@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAuthState, useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useAuthState, useCreateUserWithEmailAndPassword, useSendEmailVerification } from 'react-firebase-hooks/auth';
 import auth from '../../../Firebase/Firebase.init';
 import SocialSignin from '../../SocialSignin/SocialSignin';
 import { ToastContainer, toast } from 'react-toastify';
@@ -8,18 +8,19 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 const Signup = () => {
     const [user] = useAuthState(auth)
-
-   let navigate = useNavigate();
+    const [sendEmailVerification] = useSendEmailVerification(auth);
+    let navigate = useNavigate();
     let location = useLocation();
     let from = location.state?.from?.pathname || "/";
     if (user) {
+
         navigate(from, { replace: true });
     }
     const [
         createUserWithEmailAndPassword,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth , {sendEmailVerification: true});
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const signup = (e) => {
         e.preventDefault()
         const email = e.target.email.value
@@ -27,7 +28,8 @@ const Signup = () => {
         const confirmpassword = e.target.confirmpassword.value
         if (password === confirmpassword) {
             createUserWithEmailAndPassword(email, password)
-            toast("User Created Successful!")
+            sendEmailVerification();
+            toast("Verification Email Sent !")
         }
         else {
             toast("Password Not Match")
@@ -37,7 +39,7 @@ const Signup = () => {
 
 
         if (user) {
-            navigate(from , { replace: true });
+            navigate(from, { replace: true });
         }
     }
     return (
