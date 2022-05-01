@@ -14,7 +14,7 @@ import { signOut } from 'firebase/auth'
 export default function Header() {
     const [user] = useAuthState(auth)
     return (
-        <Disclosure as="nav" className="bg-white shadow-md">
+        <Disclosure as="nav" className="bg-white shadow-md md:flex items-center">
             {({ open }) => (
                 <>
                     <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -37,58 +37,57 @@ export default function Header() {
                                         src="https://i.ibb.co/tDDkMFP/icon-stockroom-io-d129f9.png"
                                         alt="Stock Room"
                                     />
-                                   
+
                                     <img
                                         className="hidden lg:block h-8 w-auto"
                                         src="https://i.ibb.co/tDDkMFP/icon-stockroom-io-d129f9.png"
                                         alt="Stock Room"
                                     />
-                                     <h2 className='text-gray-900 text-xl inline-block mx-1 font-bold'>Stock Room</h2>
+                                    <h2 className='text-gray-900 text-xl inline-block mx-1 font-bold'>Stock Room</h2>
                                 </div>
                                 {/* Laptop */}
                                 <div className="hidden sm:block sm:ml-6">
-                                  
-                                  <div className="flex justify-between">
-                                  <CustomLink to={'/'}>Home</CustomLink>
-                                   <CustomLink to={'/blog'}>Blog</CustomLink>
-                                    <CustomLink to={'/manageinventory'}>Manage Inventory</CustomLink>
-                                   {
-                                       user && <>
-                                       <CustomLink to={'/myitem'}>My Item</CustomLink>
-                                       <CustomLink to={'/manageinventory'}>Manage Inventory</CustomLink>
-                                       <CustomLink to={'/additem'}>Add Item</CustomLink>
-                                       
-                                       </>
-                                   }
-                                  </div>
-                                   </div>
-                                
+
+                                    <div className="flex justify-between">
+                                        <CustomLink to={'/'}>Home</CustomLink>
+                                        <CustomLink to={'/blog'}>Blog</CustomLink>
+                                        <CustomLink to={'/manageinventory'}>Manage Inventory</CustomLink>
+                                        {
+                                            user && <>
+                                                <CustomLink to={'/myitem'}>My Item</CustomLink>
+
+                                                <CustomLink to={'/additem'}>Add Item</CustomLink>
+
+                                            </>
+                                        }
+                                    </div>
+                                </div>
+
                             </div>
                             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                               {
-                                   user ? 
-                                   <button className='px-2 p-1 bg-red-700 text-white rounded-md' onClick={()=>signOut(auth)}>Sign Out</button>
-                                    : <CustomLink to={'/login'}>Log In </CustomLink>
-                               }
+                                {
+                                    user ?
+                                        <button className='px-2 p-1 bg-red-700 text-white rounded-md' onClick={() => signOut(auth)}>Sign Out</button>
+                                        : <CustomLink to={'/login'}>Log In </CustomLink>
+                                }
 
-                                
+
                             </div>
                         </div>
                     </div>
-                                                {/* Mobile*/}
+                    {/* Mobile*/}
                     <Disclosure.Panel className="sm:hidden">
                         <div className="px-2 pt-2 pb-3  ">
-                        <CustomLink  to={'/'}>Home</CustomLink>
-                        <CustomLink to={'/blog'}>Blog</CustomLink>
-                        <CustomLink to={'/manageinventory'}>Manage Inventory</CustomLink>
-                        {
-                                       user && <>
-                                       <CustomLink to={'/myitem'}>My Item</CustomLink>
-                                       <CustomLink to={'/manageinventory'}>Manage Inventory</CustomLink>
-                                       <CustomLink to={'/additem'}>Add Item</CustomLink>
-                                       
-                                       </>
-                                   }
+                            <CustomLink to={'/'}>Home</CustomLink>
+                            <CustomLink to={'/blog'}>Blog</CustomLink>
+                            <CustomLink to={'/manageinventory'}>Manage Inventory</CustomLink>
+                            {
+                                user && <>
+                                    <CustomLink to={'/myitem'}>My Item</CustomLink>
+                                    <CustomLink to={'/additem'}>Add Item</CustomLink>
+
+                                </>
+                            }
                         </div>
                     </Disclosure.Panel>
                 </>
