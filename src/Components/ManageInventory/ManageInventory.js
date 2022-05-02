@@ -8,13 +8,13 @@ const ManageInventory = () => {
     const [inventory, setInventory] = useState([])
     const navigate = useNavigate()
     useEffect(() => {
-        fetch('http://localhost:5000/inventory')
+        fetch('https://stockroom-server.herokuapp.com/inventory')
             .then(res => res.json())
             .then(data => setInventory(data))
     }, [])
     const deletitem = (id) => {
     
-            fetch(`http://localhost:5000/inventory/${id}`, {
+            fetch(`https://stockroom-server.herokuapp.com/inventory/${id}`, {
                 method: 'DELETE',
             })
                 .then((response) => response.json(id))

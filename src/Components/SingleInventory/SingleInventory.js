@@ -8,7 +8,7 @@ const SingleInventory = () => {
     const [inventory, setInventory] = useState({})
     let { img, name, price, quantity, description, suppliername } = inventory
     useEffect(() => {
-        fetch(`http://localhost:5000/inventory/${id}`)
+        fetch(`https://stockroom-server.herokuapp.com/inventory/${id}`)
             .then(res => res.json())
             .then(data => setInventory(data))
     }, [])
@@ -17,7 +17,7 @@ const SingleInventory = () => {
         let updatedQuantity = parseFloat(+ inventory.quantity ) + parseFloat(e.target.upquantity.value)
         let newinventory = { img, name, price, quantity : updatedQuantity , description, suppliername } 
         setInventory(newinventory)
-        fetch(`http://localhost:5000/inventory/${id}`, {
+        fetch(`https://stockroom-server.herokuapp.com/inventory/${id}`, {
             method: 'PUT',
             body: JSON.stringify(newinventory),
             headers: {
@@ -36,7 +36,7 @@ const SingleInventory = () => {
         let Remaining = parseFloat(+ inventory.quantity ) - 1
         let newinventory = { img, name, price, quantity : Remaining , description, suppliername } 
         setInventory(newinventory)
-        fetch(`http://localhost:5000/inventory/${id}`, {
+        fetch(`https://stockroom-server.herokuapp.com/inventory/${id}`, {
             method: 'PUT',
             body: JSON.stringify(newinventory),
             headers: {

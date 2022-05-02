@@ -11,13 +11,13 @@ const MyItem = () => {
     const [user] = useAuthState(auth)
     useEffect(() => {
         const email = user.email
-        fetch(`http://localhost:5000/myinventory?email=${email}`)
+        fetch(`https://stockroom-server.herokuapp.com/myinventory?email=${email}`)
             .then(res => res.json())
             .then(data => setInventory(data))
 
     }, [user])
     const deletitem = (id) => {
-        fetch(`http://localhost:5000/inventory/${id}`, {
+        fetch(`https://stockroom-server.herokuapp.com/inventory/${id}`, {
             method: 'DELETE',
         })
             .then((response) => response.json(id))

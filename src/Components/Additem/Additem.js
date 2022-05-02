@@ -22,7 +22,7 @@ const Additem = () => {
     }
 
 
-    fetch('http://localhost:5000/additem', {
+    fetch('https://stockroom-server.herokuapp.com/additem', {
       method: 'POST',
       body: JSON.stringify(item),
       headers: {
