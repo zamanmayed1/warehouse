@@ -59,8 +59,14 @@ const Login = () => {
             <button type='submit' className="btn-login bg-indigo-600
             ">Login</button>
           </form>
-            <div className='w-full p-2 my-1 mdk'>
+            <div className='w-full flex flex-col items-center p-2 my-1 '>
+
+               <div className=" w-3/4  p-2 border cursor-pointer mb-2  md:w-3/4 mx-auto rounded-full">
+               <Link to={'/signup'}> Join StoockRoom</Link>
+               </div>
+               <div className="div w-3/4">
             <SocialSignin/>
+               </div>
             </div>
             <ToastContainer />
         </div>
