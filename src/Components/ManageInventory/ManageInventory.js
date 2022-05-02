@@ -1,35 +1,41 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 
-  
+
 const ManageInventory = () => {
     const [inventory, setInventory] = useState([])
     const navigate = useNavigate()
+    const updatetock = (id) => {
+        navigate(`/inventory/${id}`)
+    }
     useEffect(() => {
         fetch('https://stockroom-server.herokuapp.com/inventory')
             .then(res => res.json())
             .then(data => setInventory(data))
     }, [])
+
     const deletitem = (id) => {
-    
+
             fetch(`https://stockroom-server.herokuapp.com/inventory/${id}`, {
                 method: 'DELETE',
             })
                 .then((response) => response.json(id))
                 .then((json) => {
-                   if (json.acknowledged) {
-                    toast("Delete Successful!")
-                    const remaining = inventory.filter(item => item._id !== id )
-                    setInventory(remaining)
-                    
-                   }
-                });
-          
-           
+                    if (json.acknowledged) {
+                        toast("Delete Successful!")
+                        const remaining = inventory.filter(item => item._id !== id)
+                        setInventory(remaining)
 
+                    }
+                });
         
+
+
+
+
+
     }
     const additem = () => {
         navigate('/additem')
@@ -57,8 +63,8 @@ const ManageInventory = () => {
                                         <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                                             Quantity
                                         </th>
-                                        <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-
+                                        <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-center">
+                                            Action
                                         </th>
                                     </tr>
                                 </thead>
@@ -77,7 +83,10 @@ const ManageInventory = () => {
                                                 {item?.quantity}
                                             </td>
                                             <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                                <button onClick={() => deletitem(item?._id)} className='border border-red-600 p-2'>Delete</button>
+                                                <div className="flex">
+                                                    <button onClick={() => { updatetock(item?._id) }} className='border border-indigo-600 p-2 mx-2'>Update Stock</button>
+                                                    <button onClick={() => deletitem(item?._id)} className='border border-red-600 p-2'>Delete</button>
+                                                </div>
                                             </td>
                                         </tr>)
 
@@ -100,7 +109,10 @@ const ManageInventory = () => {
                             <h2 className='font-bold text-xl'> Name : {item?.name}</h2>
                             <h2 className='text-blue-500'>Email {item?.email}</h2>
                             <h2 >Quantity {item?.quantity}</h2>
-                            <button onClick={() => deletitem(item?._id)} className='border text-white bg-red-600 rounded-lg px-4 py-1 my-2'>Delete</button>
+                            <div className="flex py-2 justify-center">
+                                <button onClick={() => { updatetock(item?._id) }} className='border border-indigo-600 p-1 mx-2'>Update Stock</button>
+                                <button onClick={() => deletitem(item?._id)} className='border border-red-600 p-1'>Delete</button>
+                            </div>
                         </div>
                     )
 

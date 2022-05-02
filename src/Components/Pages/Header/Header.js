@@ -17,7 +17,7 @@ export default function Header() {
         <Disclosure as="nav" className="bg-white shadow-md md:flex items-center">
             {({ open }) => (
                 <>
-                    <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+                    <div className=" mx-auto px-2 sm:px-6 ">
                         <div className="relative flex items-center justify-between h-16">
                             <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                                 {/* Mobile menu button*/}
@@ -46,7 +46,7 @@ export default function Header() {
                                     <h2 className='text-gray-900 text-xl inline-block mx-1 font-bold'>Stock Room</h2>
                                 </div>
                                 {/* Laptop */}
-                                <div className="hidden sm:block sm:ml-6">
+                                <div className="hidden mx-96 sm:block sm:ml-6">
 
                                     <div className="flex justify-between">
                                         <CustomLink to={'/'}>Home</CustomLink>
@@ -64,7 +64,7 @@ export default function Header() {
                                 </div>
 
                             </div>
-                            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                            <div className="absolute inset-y-0 right-0 flex justify-end items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                                 {
                                     user ?
                                         <button className='px-2 p-1 bg-red-700 text-white rounded-md' onClick={() => signOut(auth)}>Sign Out</button>

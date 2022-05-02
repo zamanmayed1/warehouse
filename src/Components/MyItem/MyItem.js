@@ -9,6 +9,9 @@ const MyItem = () => {
     const [inventory, setInventory] = useState([])
     const navigate = useNavigate()
     const [user] = useAuthState(auth)
+    const updatetock = (id) => {
+        navigate(`/inventory/${id}`)
+    }
     useEffect(() => {
         const email = user.email
         fetch(`https://stockroom-server.herokuapp.com/myinventory?email=${email}`)
@@ -76,7 +79,10 @@ const MyItem = () => {
                                                 {item?.quantity}
                                             </td>
                                             <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                            <div className="flex">
+                                                <button onClick={() => { updatetock(item?._id) }}  className='border border-indigo-600 p-2 mx-2'>Update Stock</button>
                                                 <button onClick={() => deletitem(item?._id)} className='border border-red-600 p-2'>Delete</button>
+                                                </div>
                                             </td>
                                         </tr>)
 
@@ -99,7 +105,10 @@ const MyItem = () => {
                             <h2 className='font-bold text-xl'> Name : {item?.name}</h2>
                             <h2 className='text-blue-500'>Email {item?.email}</h2>
                             <h2 >Quantity {item?.quantity}</h2>
-                            <button onClick={() => deletitem(item?._id)} className='border text-white bg-red-600 rounded-lg px-4 py-1 my-2'>Delete</button>
+                            <div className="flex justify-center">
+                                                    <button onClick={() => { updatetock(item?._id) }} className='border border-indigo-600 p-2 mx-2'>Update Stock</button>
+                                                    <button onClick={() => deletitem(item?._id)} className='border border-red-600 p-2'>Delete</button>
+                                                </div>
                         </div>
                     )
 

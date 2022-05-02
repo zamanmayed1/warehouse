@@ -55,7 +55,7 @@ const SingleInventory = () => {
                 {name}
             </h2>
             <div className=" md:p-5 w-3/4 mx-auto md:grid grid-cols-3 gap-4" >
-                <div className="border h-[350px] p-3">
+                <div className="border h-[350px] p-3 image-box">
                     <img className='w-full' src={img} alt="" />
                 </div>
                 <div className=" py-3 px-2 h-auto col-span-2 text-left">
@@ -72,8 +72,8 @@ const SingleInventory = () => {
                     <h3 className='mb-2'>
                         Quantity :   <span className="font-bold border px-2 mx-3">{quantity}</span>
                     </h3>
-                    <h3 className='mb-2'>
-                        Description :   <span className="font-bold  ">{description}</span>
+                    <h3 className='mb-2 h-auto text-justify'>
+                        Description :   <span >{description}</span>
                     </h3>
                     <button onClick={() => delivered(quantity)} type='button' className="inline-block w-[150px] px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Delivered</button>
                 </div>
