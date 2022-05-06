@@ -37,93 +37,93 @@ const MyItem = () => {
                 }
             });
     }
-return (
-    <div className='py-6 mb-20'>
-       
+    return (
+        <div className='py-6 mb-20'>
 
-        {
-            inventory ? <>
-             <h2 className='text-xl md:text-2xl my-5 font-bold text-indigo-400'>My Item : {inventory?.length}</h2>
-            <button onClick={additem} className='border border-blue-600 my-2 mb-4 font-bold p-2'>Add New Item</button>
 
-            <div className=" md:block flex flex-col md:w-3/4 mx-auto border text-left">
-                <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
-                    <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-                        <div className="overflow-hidden">
-                            <table className="min-w-full">
-                                <thead className="bg-white border-b">
-                                    <tr>
-    
-                                        <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                            Name
-                                        </th>
-                                        <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                            Email
-                                        </th>
-                                        <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                            Quantity
-                                        </th>
-                                        <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-    
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {
-    
-                                        inventory?.map(item => <tr key={item?._id} className="bg-gray-50 border-b">
-    
-                                            <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                                {item?.name}
-                                            </td>
-                                            <td className="text-sm text-blue-500 font-light px-6 py-4 whitespace-nowrap">
-                                                {item?.email}
-                                            </td>
-                                            <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                                {item?.quantity}
-                                            </td>
-                                            <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                                <div className="flex">
-                                                    <button onClick={() => { updatetock(item?._id) }} className='border border-indigo-600 p-2 mx-2'>Update Stock</button>
-                                                    <button onClick={() => deletitem(item?._id)} className='border border-red-600 p-2'>Delete</button>
-                                                </div>
-                                            </td>
-                                        </tr>)
-    
-                                    }
-    
-    
-    
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    
-            <div className='md:hidden ' >
-                {
-    
-                    inventory?.map(item =>
-                        <div className='w-full shadow-md p-2 my-2' key={item?._id}>
-                            <h2 className='font-bold text-xl'> Name : {item?.name}</h2>
-                            <h2 className='text-blue-500'>Email {item?.email}</h2>
-                            <h2 >Quantity {item?.quantity}</h2>
-                            <div className="flex justify-center">
-                                <button onClick={() => { updatetock(item?._id) }} className='border border-indigo-600 p-2 mx-2'>Update Stock</button>
-                                <button onClick={() => deletitem(item?._id)} className='border border-red-600 p-2'>Delete</button>
+            {
+                inventory ? <>
+                    <h2 className='text-xl md:text-2xl my-5 font-bold text-indigo-400'>My Item : {inventory?.length}</h2>
+                    <button onClick={additem} className='border border-blue-600 my-2 mb-4 font-bold p-2'>Add New Item</button>
+
+                    <div className=" md:block flex flex-col md:w-3/4 mx-auto border text-left">
+                        <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
+                            <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+                                <div className="overflow-hidden">
+                                    <table className="min-w-full">
+                                        <thead className="bg-white border-b">
+                                            <tr>
+
+                                                <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                                    Name
+                                                </th>
+                                                <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                                    Email
+                                                </th>
+                                                <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                                    Quantity
+                                                </th>
+                                                <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {
+
+                                                inventory?.map(item => <tr key={item?._id} className="bg-gray-50 border-b">
+
+                                                    <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                        {item?.name}
+                                                    </td>
+                                                    <td className="text-sm text-blue-500 font-light px-6 py-4 whitespace-nowrap">
+                                                        {item?.email}
+                                                    </td>
+                                                    <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                        {item?.quantity}
+                                                    </td>
+                                                    <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                        <div className="flex">
+                                                            <button onClick={() => { updatetock(item?._id) }} className='border border-indigo-600 p-2 mx-2'>Update Stock</button>
+                                                            <button onClick={() => deletitem(item?._id)} className='border border-red-600 p-2'>Delete</button>
+                                                        </div>
+                                                    </td>
+                                                </tr>)
+
+                                            }
+
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
-                    )
-    
-                }
-            </div></>
-            :
-            <SpinnerInfinity className="mx-auto" size={57} thickness={180} speed={100} color="#1A56DB" secondaryColor="rgba(73, 57, 172, 0.44)" />
-        }
-        <ToastContainer />
-    </div>
-);
+                    </div>
 
-        }
+                    <div className='md:hidden ' >
+                        {
+
+                            inventory?.map(item =>
+                                <div className='w-full shadow-md p-2 my-2' key={item?._id}>
+                                    <h2 className='font-bold text-xl'> Name : {item?.name}</h2>
+                                    <h2 className='text-blue-500'>Email {item?.email}</h2>
+                                    <h2 >Quantity {item?.quantity}</h2>
+                                    <div className="flex justify-center">
+                                        <button onClick={() => { updatetock(item?._id) }} className='border border-indigo-600 p-2 mx-2'>Update Stock</button>
+                                        <button onClick={() => deletitem(item?._id)} className='border border-red-600 p-2'>Delete</button>
+                                    </div>
+                                </div>
+                            )
+
+                        }
+                    </div></>
+                    :
+                    <SpinnerInfinity className="mx-auto" size={57} thickness={180} speed={100} color="#1A56DB" secondaryColor="rgba(73, 57, 172, 0.44)" />
+            }
+            <ToastContainer />
+        </div>
+    );
+
+}
 export default MyItem;

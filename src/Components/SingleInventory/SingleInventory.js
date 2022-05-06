@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SingleInventory = () => {
     const { id } = useParams()
@@ -14,8 +14,8 @@ const SingleInventory = () => {
     }, [])
     const restock = (e) => {
         e.preventDefault()
-        let updatedQuantity = parseFloat(+ inventory.quantity ) + parseFloat(e.target.upquantity.value)
-        let newinventory = { img, name, price, quantity : updatedQuantity , description, suppliername } 
+        let updatedQuantity = parseFloat(+ inventory.quantity) + parseFloat(e.target.upquantity.value)
+        let newinventory = { img, name, price, quantity: updatedQuantity, description, suppliername }
         setInventory(newinventory)
         fetch(`https://stockroom-server.herokuapp.com/inventory/${id}`, {
             method: 'PUT',
@@ -26,28 +26,33 @@ const SingleInventory = () => {
         })
             .then((response) => response.json())
             .then((json) => {
-               e.target.reset()
-               toast('Restock Success')
+                e.target.reset()
+                toast('Restock Success')
             }
             )
     }
-    
+
     const delivered = () => {
-        let Remaining = parseFloat(+ inventory.quantity ) - 1
-        let newinventory = { img, name, price, quantity : Remaining , description, suppliername } 
-        setInventory(newinventory)
-        fetch(`https://stockroom-server.herokuapp.com/inventory/${id}`, {
-            method: 'PUT',
-            body: JSON.stringify(newinventory),
-            headers: {
-                'Content-type': 'application/json',
-            },
-        })
-            .then((response) => response.json())
-            .then((json) => {
-               toast('Delivered Success')
-            }
-            )
+        if (quantity >= 1) {
+            let Remaining = parseFloat(+ inventory.quantity) - 1
+            let newinventory = { img, name, price, quantity: Remaining, description, suppliername }
+            setInventory(newinventory)
+            fetch(`https://stockroom-server.herokuapp.com/inventory/${id}`, {
+                method: 'PUT',
+                body: JSON.stringify(newinventory),
+                headers: {
+                    'Content-type': 'application/json',
+                },
+            })
+                .then((response) => response.json())
+                .then((json) => {
+                    toast('Delivered Success')
+                }
+                )
+        }
+        else {
+            toast('Already Out of Stock')
+        }
     }
     return (
         <div className='h-auto py-6 mb-24' >
@@ -70,7 +75,7 @@ const SingleInventory = () => {
                         Price :   <span className="font-bold">{price} BDT</span>
                     </h3>
                     <h3 className='mb-2'>
-                        Quantity :   <span className="font-bold border px-2 mx-3">{quantity}</span>
+                        Quantity :   <span className="font-bold border px-2 mx-3">{quantity >= 1 ? quantity : <span className='text-red-500'>Out Of Stock</span> }</span>
                     </h3>
                     <h3 className='mb-2 h-auto text-justify'>
                         Description :   <span >{description}</span>
@@ -107,8 +112,8 @@ const SingleInventory = () => {
               focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
             "
                             id="exampleFormControlInput1"
-                            placeholder="Add Quantity" 
-                            required/>
+                            placeholder="Add Quantity"
+                            required />
 
 
                         <button type="submit" className=" mx-2 inline-block  px-6 my-2 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Add Now</button>
@@ -117,7 +122,7 @@ const SingleInventory = () => {
                 </div>
             </div>
 
-<ToastContainer />
+            <ToastContainer />
         </div>
 
 

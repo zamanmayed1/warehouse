@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <footer className="text-center text-white bg-[#F3F4F6]">
-      <div className="container pt-9">
-        <div className="flex justify-center mb-9">
+      <div className=" flex content-center justify-center pt-9">
+        <div className="flex justify-center  mb-9">
           <a href="https://www.facebook.com/zamanmayed" className="mr-9 text-gray-800">
             <svg
               aria-hidden="true"
