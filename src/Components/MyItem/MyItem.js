@@ -13,13 +13,32 @@ const MyItem = () => {
     const updatetock = (id) => {
         navigate(`/inventory/${id}`)
     }
+    // useEffect(() => {
+    //     const email = user.email
+    //     fetch(`https://stockroom-server.herokuapp.com/myinventory?email=${email}`)
+    //         .then(res => res.json())
+    //         .then(data => setInventory(data))
+
+    // }, [user])
     useEffect(() => {
         const email = user.email
-        fetch(`https://stockroom-server.herokuapp.com/myinventory?email=${email}`)
-            .then(res => res.json())
-            .then(data => setInventory(data))
+        fetch(`https://stockroom-server.herokuapp.com/myinventory?email=${email}`, {
+            method: 'GET',
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+            .then(res => {
+                if (res.status === 401 || res.status === 403) {
+                    navigate('/login');
+                }
+                return res.json()
+            })
+            .then(data => {
+                setInventory(data)
+            })
+    }, [])
 
-    }, [user])
     const additem = () => {
         navigate('/additem')
     }
@@ -80,7 +99,7 @@ const MyItem = () => {
                                                         {item?.email}
                                                     </td>
                                                     <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                                        {item?.quantity}
+                                                        {item?.quantity >= 1 ? item.quantity : <span className='text-red-500'>Out Of Stock</span>}
                                                     </td>
                                                     <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                                         <div className="flex">

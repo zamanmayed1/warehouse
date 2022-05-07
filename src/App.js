@@ -13,6 +13,7 @@ import Signup from './Components/Pages/Signup/Signup';
 import RequireAuth from './Components/RequireAuth/RequireAuth';
 import Footer from './Components/Shared/Footer';
 import SingleInventory from './Components/SingleInventory/SingleInventory';
+import Stock from './Components/Stock/Stock';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path='/inventory/:id' element={<RequireAuth><SingleInventory></SingleInventory> </RequireAuth>}></Route>
         <Route path='/myitem' element={<RequireAuth><MyItem></MyItem></RequireAuth>}></Route>
         <Route path='/additem' element={<RequireAuth><Additem></Additem></RequireAuth>}></Route>
+        <Route path='/stock' element={<Stock></Stock>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
         <Route path='/blog' element={<Blog></Blog>}></Route>

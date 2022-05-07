@@ -51,6 +51,7 @@ export default function Header() {
                                     <div className="flex justify-between">
                                         <CustomLink to={'/'}>Home</CustomLink>
                                         <CustomLink to={'/blog'}>Blog</CustomLink>
+                                        <CustomLink to={'/stock'}>Stock</CustomLink>
                                         <CustomLink to={'/manageinventory'}>Manage Inventory</CustomLink>
                                         {
                                             user && <>
@@ -80,6 +81,7 @@ export default function Header() {
                         <div className="px-2 pt-2 pb-3  ">
                             <CustomLink to={'/'}>Home</CustomLink>
                             <CustomLink to={'/blog'}>Blog</CustomLink>
+                            <CustomLink to={'/stock'}>Stock</CustomLink>
                             <CustomLink to={'/manageinventory'}>Manage Inventory</CustomLink>
                             {
                                 user && <>
