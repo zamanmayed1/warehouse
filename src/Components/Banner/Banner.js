@@ -26,6 +26,7 @@ const Banner = () => {
         ></button>
       </div>
       <div className="carousel-inner relative w-full overflow-hidden">
+      
         <div className="carousel-item active float-left w-full">
           <img
             src="https://i.ibb.co/7Rdw5k9/new-1-1.png"
@@ -35,18 +36,19 @@ const Banner = () => {
         </div>
         <div className="carousel-item float-left w-full">
           <img
-            src="https://i.ibb.co/D8RWhd4/new2-1.png"
-            className="block w-full"
-            alt="Rice Banner"
-          />
-        </div>
-        <div className="carousel-item float-left w-full">
-          <img
             src="https://i.ibb.co/QmNg22L/new3-1.png"
             className="block w-full"
             alt="Exotic Fruits"
           />
         </div>
+        <div className="carousel-item float-left w-full">
+          <img
+            src="https://i.ibb.co/D8RWhd4/new2-1.png"
+            className="block w-full"
+            alt="Rice Banner"
+          />
+        </div>
+
       </div>
       <button
         className="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"

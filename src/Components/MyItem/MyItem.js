@@ -62,7 +62,7 @@ const MyItem = () => {
                 inventory ? <>
                     
 
-                    <div className=" md:block flex flex-col md:w-3/4 mx-auto border text-left">
+                    <div className="hidden md:flex flex-col md:w-3/4 mx-auto border text-left">
                         <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
                             <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
                                 <div className="overflow-hidden">
