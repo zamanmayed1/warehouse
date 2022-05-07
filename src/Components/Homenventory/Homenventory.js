@@ -14,8 +14,8 @@ const Homenventory = () => {
         navigate(`inventory/${id}`)
     }
     return (
-        <div className='md:p-10'>
-             <h2 className='text-xl md:text-2xl my-5 font-bold text-indigo-400'>Inventory</h2>
+        <div className='md:p-10 bg-[#F7F7F7]'>
+             <h2 className='text-xl md:text-2xl py-4 font-bold text-indigo-400'>Inventory</h2>
             {
                 inventory ? <>
                
@@ -49,7 +49,7 @@ const Homenventory = () => {
            </div>
            <Link to={'/manageinventory'}>
 
-               <button className="inline-block w-[190px] px-6 py-2.5 bg-blue-500 text-white  text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Manage Inventories</button>
+               <button className="inline-block w-[190px] px-6 py-2.5 my-6 bg-blue-500 text-white  text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Manage Inventories</button>
            </Link></>
            :
            <SpinnerInfinity className="mx-auto" size={57} thickness={180} speed={100} color="#1A56DB" secondaryColor="rgba(73, 57, 172, 0.44)" />

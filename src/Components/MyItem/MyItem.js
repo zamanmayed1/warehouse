@@ -13,13 +13,7 @@ const MyItem = () => {
     const updatetock = (id) => {
         navigate(`/inventory/${id}`)
     }
-    // useEffect(() => {
-    //     const email = user.email
-    //     fetch(`https://stockroom-server.herokuapp.com/myinventory?email=${email}`)
-    //         .then(res => res.json())
-    //         .then(data => setInventory(data))
 
-    // }, [user])
     useEffect(() => {
         const email = user.email
         fetch(`https://stockroom-server.herokuapp.com/myinventory?email=${email}`, {

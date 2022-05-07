@@ -2,8 +2,8 @@ import React from 'react';
 
 const BestSupplier = () => {
     return (
-        <div>
-                        <h2 className='text-xl md:text-2xl my-5 font-bold text-indigo-400'>Our Best Supplier</h2>
+        <div className='bg-[#F0F2F5] py-6'>
+                        <h2 className='text-xl md:text-2xl  font-bold text-indigo-400'>Our Best Supplier</h2>
 
             <div id="carouselExampleCaptions" className="carousel slide relative carousel-dark" data-bs-ride="carousel">
   <div className="carousel-inner relative w-full overflow-hidden">

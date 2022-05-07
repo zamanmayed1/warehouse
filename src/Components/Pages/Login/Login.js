@@ -33,29 +33,6 @@ const Login = () => {
         setPassword(event.target.value)
     }
 
-    //  const handleLogin = async event=>{
-
-    //      event.preventDefault()
-    //     await signInWithEmailAndPassword(email,password)
-    //     fetch('https://stockroom-server.herokuapp.com/login', {
-    //         method: 'POST',
-    //         body: JSON.stringify({email}),
-    //         headers: {
-    //           'Content-type': 'application/json'
-    //         },
-    //       })
-    //         .then((response) => response.json())
-    //         .then((data) =>{
-    //             console.log(data);
-    //             if(data.success){
-    //                 localStorage.setItem('accessToken', data.accessToken);
-    //                 navigate(from , {replace: true})
-    //             }
-
-    //         } );
-
-    //     }
-
     const handleLogin = event => {
         event.preventDefault();
         fetch('https://stockroom-server.herokuapp.com/login', {
@@ -71,7 +48,7 @@ const Login = () => {
                     signInWithEmailAndPassword(email,password)
                     localStorage.setItem('accessToken', data.accessToken);
                 }
-                console.log(data);
+            
             })
     }
     const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
