@@ -38,13 +38,17 @@ const ManageInventory = () => {
         navigate('/additem')
     }
     return (
-        <div className='py-6 mb-20'>
+        <div className=' mb-20'>
+            <div className='h-[30vh] flex flex-col items-center justify-center stockheader mb-3'>
             <h2 className='text-xl md:text-2xl my-5 font-bold text-indigo-400'>Manage Inventory : {inventory?.length}</h2>
+            <button onClick={additem} className='border border-blue-600 my-2 mb-4 font-bold p-2'>Add New Item</button> 
+
+            </div>
+           
            
          {
              inventory ? <>
-              <button onClick={additem} className='border border-blue-600 my-2 mb-4 font-bold p-2'>Add New Item</button> 
-
+              
 
 <div className=" hidden md:block md:flex flex-col md:w-3/4 mx-auto border text-left">
     <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">

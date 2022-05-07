@@ -57,13 +57,16 @@ const MyItem = () => {
             });
     }
     return (
-        <div className='py-6 mb-20'>
+        <div className='mb-20'>
+            <div className='h-[30vh] flex flex-col mb-4 items-center justify-center stockheader'>
+            <h2 className='text-xl md:text-2xl my-5 font-bold text-indigo-400'>My Item : {inventory?.length}</h2>
+                    <button onClick={additem} className='border border-blue-600 my-2 mb-4 font-bold p-2'>Add New Item</button>
+            </div>
 
 
             {
                 inventory ? <>
-                    <h2 className='text-xl md:text-2xl my-5 font-bold text-indigo-400'>My Item : {inventory?.length}</h2>
-                    <button onClick={additem} className='border border-blue-600 my-2 mb-4 font-bold p-2'>Add New Item</button>
+                    
 
                     <div className=" md:block flex flex-col md:w-3/4 mx-auto border text-left">
                         <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">

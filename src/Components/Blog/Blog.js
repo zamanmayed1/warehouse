@@ -2,7 +2,11 @@ import React from 'react';
 
 const Blog = () => {
     return (
-        <div className='text-left py-6 mb-32 md:w-3/4 mx-auto p-2'>
+        <div>
+            <div className='h-[30vh] flex items-center justify-center stockheader'>
+                    <h1 className='md:text-3xl text-2xl text-indigo-500'>Blog</h1>
+            </div>
+            <div className='text-left py-6 mb-32 md:w-3/4 mx-auto p-2'>
             <div className="qna my-2 p-1 shadow-sm">
                 <h1 className='text-xl font-bold text-indigo-600 my-2'>1 ) Differences between sql and nosql databases ?</h1>
                 <h2 className='ml-1'>
@@ -50,6 +54,7 @@ const Blog = () => {
                     c ) Nodejs does not have capability to add HTML tags. <br />
 
                 </h2>
+            </div>
             </div>
         </div>
     );
